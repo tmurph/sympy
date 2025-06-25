@@ -37,7 +37,8 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.linkcode',
               'sphinx_reredirects', 'sphinx_copybutton',
               'sphinx.ext.graphviz', 'sphinxcontrib.jquery',
               'matplotlib.sphinxext.plot_directive', 'myst_parser',
-              'convert-svg-to-pdf', 'sphinx.ext.intersphinx', ]
+              'convert-svg-to-pdf', 'sphinx.ext.intersphinx',
+              'sympy_texinfo_patch', ]
 
 # Add redirects here. This should be done whenever a page that is in the
 # existing release docs is moved somewhere else so that the URLs don't break.
@@ -453,6 +454,11 @@ texinfo_documents = [
     (master_doc, 'sympy', 'SymPy Documentation', 'SymPy Development Team',
    'SymPy', 'Computer algebra system (CAS) in Python', 'Programming', 1),
 ]
+# This barfs on nonexistent node '0' (the sympy toplevel node)
+texinfo_domain_indices = False
+# This is not great forever, it just makes the entry point more
+# friendly.
+texinfo_no_detailmenu = True
 
 # Use svg for graphviz
 graphviz_output_format = 'svg'
