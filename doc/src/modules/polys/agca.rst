@@ -127,7 +127,7 @@ Modules, Ideals and their Elementary Properties
 -----------------------------------------------
 
 Let `A` be a ring. An `A`-module is a set `M`, together with two binary
-operations `+: M \times M \to M` and `\times: R \times M \to M` called
+operations `+: M \times M \to M` and `\times: A \times M \to M` called
 addition and scalar multiplication. These are required to satisfy certain
 axioms, which can be found in e.g. [Atiyah69]_. In this way modules are
 a direct generalisation of both vector spaces (`A` being a field) and abelian
@@ -160,7 +160,7 @@ the *rank* of `M`; one may prove this is well-defined.
 In general, the AGCA module only works with free modules of finite rank, and
 other closely related modules. The easiest way to create modules is to use
 member methods of the objects they are made up from. For example, let us create
-a free module of rank 4 over the coordinate ring of `\mathbb{A}^2`
+a free module of rank 4 over the coordinate ring of `\mathbb{A}^3`
 we created above, together with a submodule::
 
     >>> F = ar.free_module(4) ; F
